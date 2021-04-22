@@ -1,0 +1,58 @@
+{
+  "name": "Evaluate-news-article-with-Natural-Language-Processing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/server/index.js",
+  "scripts": {
+   "test": "jest",
+        "test:watch": "jest --watch --detectOpenHandles",
+        "start": "node src/server/index.js",
+        "build-prod": "webpack --config webpack.prod.js",
+        "build-dev": "webpack serve  --config webpack.dev.js --open"
+  },
+  "jest": {
+        "collectCoverage": true,
+        "testEnvironment": "node",
+        "coveragePathIgnorePatterns": [
+            "/node_modules/@rollup"
+        ]
+    },
+    "resolutions": {
+        "**/jest-haste-map/fsevents": "2.1.3"
+    },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/runtime": "^7.13.17",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "node-fetch": "^2.6.1",
+    "webpack": "^5.35.0",
+    "webpack-cli": "^4.6.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.13.16",
+    "@babel/plugin-transform-runtime": "^7.13.15",
+    "@babel/preset-env": "^7.13.15",
+    "@types/node": "^14.14.41",
+    "babel-loader": "^8.2.2",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "clean-webpack-plugin": "^4.0.0-alpha.0",
+    "css-loader": "^5.2.4",
+    "html-webpack-plugin": "^5.3.1",
+    "jest": "^26.6.3",
+    "mini-css-extract-plugin": "^1.5.0",
+    "node-sass": "^5.0.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.4",
+    "sass-loader": "^11.0.1",
+    "style-loader": "^2.0.0",
+    "supertest": "^6.1.3",
+    "terser-webpack-plugin": "^5.1.1",
+    "webpack-dev-server": "^3.11.2",
+    "workbox-webpack-plugin": "^6.1.5"
+  }
+}

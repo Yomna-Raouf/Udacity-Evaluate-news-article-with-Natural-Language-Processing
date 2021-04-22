@@ -1,0 +1,55 @@
+form {
+    padding: 40px;
+    background: rgba( 255, 255, 255, 0.25 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+input {
+   padding: 5px 20px;
+    width: 100%;
+    line-height: 16px;
+    margin: 10px 0;
+    border-radius: 15px;
+    border: 0;
+    color:#5665cc;
+}
+
+input[type="submit"] {
+    width: 150px;
+    background: #5665cc;
+    cursor: pointer;
+    height: 40px;
+    border-radius: 20px;
+    color: #fff;
+}
+
+h1 {
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+#results {
+    line-height: 2em;
+    letter-spacing: 1px;
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#results div span {
+    color: #26c6da;
+}
+
+

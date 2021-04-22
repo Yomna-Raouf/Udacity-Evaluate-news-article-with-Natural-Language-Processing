@@ -1,0 +1,51 @@
+$font-stack: cursive;
+
+* {
+    box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+	color: #fff;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background:    linear-gradient(
+    to bottom right,
+    hsla(330, 100%, 45.1%, 0.93) 0%,
+    hsla(329.43, 98.76%, 44.82%, 0.929) 8.3%,
+    hsla(327.71, 95.17%, 44.03%, 0.928) 16.6%,
+    hsla(324.64, 89.35%, 42.82%, 0.925) 24.6%,
+    hsla(319.67, 81.34%, 41.25%, 0.921) 32.5%,
+    hsla(311.7, 71.09%, 39.4%, 0.917) 40.1%,
+    hsla(298.2, 59.29%, 38.03%, 0.913) 47.6%,
+    hsla(280.87, 53.21%, 42.38%, 0.908) 54.8%,
+    hsla(263.16, 48.17%, 46.81%, 0.903) 61.7%,
+    hsla(245.69, 46.2%, 51.19%, 0.898) 68.3%,
+    hsla(230.75, 54.68%, 51.24%, 0.894) 74.5%,
+    hsla(221.81, 65.58%, 49.34%, 0.889) 80.4%,
+    hsla(216.29, 78.16%, 47.7%, 0.886) 86%,
+    hsla(212.84, 88.8%, 46.4%, 0.883) 91.1%,
+    hsla(210.83, 96.44%, 45.5%, 0.881) 95.8%,
+    hsla(210, 100%, 45.1%, 0.88) 100%
+  );
+    font: 100% $font-stack;
+}
+
+main {
+   position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+    left: 0;
+}
+
+section {
+    max-width: 80%;
+    margin: 50px auto;
+}
