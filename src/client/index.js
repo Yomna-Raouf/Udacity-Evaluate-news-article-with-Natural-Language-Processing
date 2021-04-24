@@ -3,9 +3,9 @@ import { urlChecker } from './js/urlChecker'
 
 
 
-import './style/style.scss'
 import './style/form.scss'
+import './style/style.scss'
 
 
-export { handleSubmit }
-export { urlChecker } 
+
+export { handleSubmit , urlChecker } 

@@ -1,46 +1,50 @@
 const { urlChecker } = require('./urlChecker');
 
+
+// Global Variables
+const NlpResultsContainer = document.querySelector('#results');
+const ArticleUrlInput = document.querySelector('#Article__url');
+
+
 // handling URLL Form submition
-const handleSubmit = (event) =>  {
+const handleSubmit = async (event) =>  {
     event.preventDefault();
 
     // Validating user input
-    let userUrl = document.getElementById('name').value;
+    const userUrl = ArticleUrlInput.value;
 
-    if (urlChecker(userUrl)) {
-        postData(userUrl)
-            .then((res) =>  {
-                let html = `
-                    <div id="irony"> <span> Irony: </span> ${res.irony} </div>
-                    <div id="confidence"> <span> Confidence: </span> ${res.confidence} </div>
-                    <div id="subjectivity"> <span> Subjectivity: </span>  ${res.subjectivity} </div>
-                    <div id="polarity"> <span> Polarity: </span> ${res.score_tag} </div>
-                `
-                document.getElementById('results').innerHTML = html ;
-            })
-    } else {
-        alert("Please enter valid URL");
+    try {
+        if (urlChecker(userUrl)) {
+            const mockAPIData = await postData(userUrl);
+            const mockAPIDataObj = await mockAPIData.json();
+            const html = `
+                <div id="irony"> <span> Irony: </span> ${mockAPIDataObj.irony} </div>
+                <div id="confidence"> <span> Confidence: </span> ${mockAPIDataObj.confidence} </div>
+                <div id="subjectivity"> <span> Subjectivity: </span>  ${mockAPIDataObj.subjectivity} </div>
+                <div id="polarity"> <span> Polarity: </span> ${mockAPIDataObj.score_tag} </div>
+            `
+            NlpResultsContainer.innerHTML = html ;
+        } else {
+            alert("Please enter valid URL");
+        }
+    } catch(e) {
+        console.log(e.message)
     }
+
+   
 }
 
 // POSTING User Input to server
-const postData = async (url = "") => {
-    try {
-        const response = await fetch('http://localhost:8083/NLP', {
-            method: 'POST',
-            mode: 'cors',
-            credentials: 'same-origin',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify( { url }),
-        });
-
-        const data = await response.json();
-        return data;
-    } catch (error) {
-        console.log(error.message);
-    }
+const postData =  (url) => {
+  return  fetch('http://localhost:8083/test', {
+        method: 'POST',
+        mode: 'cors',
+        credentials: 'same-origin',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify( { url }),
+    })
 }
 
 export { handleSubmit }

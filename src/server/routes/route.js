@@ -2,8 +2,7 @@
 const express = require('express');
 const path = require('path');
 const fetch = require('node-fetch');
-const dotenv = require('dotenv');
-dotenv.config();
+require('dotenv').config();
 
 // API INFO
 const baseUrl = 'https://api.meaningcloud.com/sentiment-2.1?key=';
@@ -13,12 +12,12 @@ const API_KEY = process.env.API_KEY;
 const router = express.Router();
 
 // ROUTES 
-router.get('/', function (req, res) {
+router.get('/', function (_, res) {
   res.status(200).sendFile(path.resolve('dist/index.html'));
 });
 
 //POST request
-router.post('/NLP', async (req, res) => {
+router.post('/test', async (req, res) => {
   
   let ArticleUrl = req.body.url;
   try {

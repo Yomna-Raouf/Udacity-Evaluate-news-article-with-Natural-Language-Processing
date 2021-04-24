@@ -1,16 +1,9 @@
 // Require Express to run server and routes
 const express = require('express')
 const cors = require('cors');
-const { read } = require('fs');
-/* const { response } = require('express');
-const { ValidationError } = require('webpack'); */
-
-
-// Require mockAPI response
-const mockAPIResponse = require('./mockAPI.js')
 
 // Routers
-const route = require('./route');
+const route = require('./routes/route');
 
 // Start up an instance of app
 const app = express();
@@ -27,11 +20,6 @@ app.use(express.static('dist'));
 
 // Initialize all route with a callback function
 app.use('/', route);
-
-// Setup Server
-app.listen(process.env.PORT || 8083, () => {
-    console.log('app is listening on port 8083!')
-})
 
 module.exports = app;
 
