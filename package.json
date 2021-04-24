@@ -19,7 +19,6 @@
         "express": "^4.17.1",
         "node-fetch": "^2.6.1",
         "webpack": "^5.35.0",
-        "webpack-bundle-analyzer": "^4.4.1",
         "webpack-cli": "^4.6.0"
     },
     "devDependencies": {
